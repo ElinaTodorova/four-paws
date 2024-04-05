@@ -1,10 +1,20 @@
 import { screen, render } from "@testing-library/react";
 import Header from "./Header";
 
-test("Run test", () => {
-  render(<Header />);
+describe("Test for Header", () => {
+  test("Have a header", () => {
+    render(<Header />);
 
-  const header = screen.getByRole("navigation");
+    const header = screen.getByRole("navigation");
 
-  expect(header).toBeInTheDocument();
+    expect(header).toBeInTheDocument();
+  });
+
+  test("Have two item in header", () => {
+    render(<Header />);
+
+    const elements = screen.getAllByTestId("svg-icon");
+
+    expect(elements).toHaveLength(2);
+  });
 });

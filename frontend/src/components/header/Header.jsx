@@ -7,11 +7,13 @@ export default function Header() {
     <nav className="nav_bar" role="navigation">
       <FontAwesomeIcon
         className="svg_icon"
+        data-testid="svg-icon"
         icon={faPaw}
         style={{ color: "#ffffff" }}
       />
       <FontAwesomeIcon
         className="svg_icon"
+        data-testid="svg-icon"
         icon={faUser}
         style={{ color: "#ffffff" }}
       />
