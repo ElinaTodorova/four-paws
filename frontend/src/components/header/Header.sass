@@ -1,15 +1,22 @@
-$secondary_color: #32de84
-$size_svg: 3.2rem
+@import '../../variables'
 
 .nav_bar
-    background-color: $secondary_color
-    height: 5rem
+    background-color: $primary_color
+    height: 4rem
     width: 100%
-    display: flex
-    align-items: center
+    @include flexbox_centre()
     justify-content: space-between
 
 .svg_icon
-    width: $size_svg
-    height: $size_svg
+    width: 3rem
+    height: 3rem
     padding: 0.5rem
+
+@media screen and (width > 768px)
+    .nav_bar
+        height: 5rem
+
+    .svg_icon
+        width: $size_svg
+        height: $size_svg
+

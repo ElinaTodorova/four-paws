@@ -4,16 +4,32 @@ import { Button } from "antd";
 export default function Home() {
   return (
     <section className="header">
-      <div>
-        <h1>Four paws</h1>
-        <p>Where love and care meet quality pet supplies!</p>
+      <div className="content">
+        <div className="info">
+          <h1>Four paws</h1>
+          <p role="presentation">
+            Here, every story has a four-legged hero in search of a loving home,
+            and every visitor has the power to change a life, one wagging tail
+            at a time.
+          </p>
+        </div>
+        <div className="button-container">
+          <Button
+            type="primary"
+            size="large"
+            className="button-start"
+            block
+            role="button"
+          >
+            Get started
+          </Button>
+        </div>
       </div>
-      <img src="/images/homeImg.png" alt="Dog and Cat running" />
-      <div className="button-container">
-        <Button type="primary" size="large" className="button-start" block>
-          Get started
-        </Button>
-      </div>
+      <img
+        className="image_welcome"
+        src="/images/homeImg.png"
+        alt="Dog and Cat running"
+      />
     </section>
   );
 }
