@@ -1,9 +1,9 @@
 import { screen, render } from "@testing-library/react";
-import Home from "./Home";
+import Welcome from "./Welcome";
 
 describe("Home tests", () => {
   test("Have an H1", () => {
-    render(<Home />);
+    render(<Welcome />);
 
     const title = screen.getByText("Four paws");
 
@@ -11,7 +11,7 @@ describe("Home tests", () => {
   });
 
   test("Have a into paragraph", () => {
-    render(<Home />);
+    render(<Welcome />);
 
     const paragraph = screen.getByRole("presentation");
 
@@ -19,7 +19,7 @@ describe("Home tests", () => {
   });
 
   test("Have an image", () => {
-    render(<Home />);
+    render(<Welcome />);
 
     const button = screen.getByRole("button");
 
@@ -27,7 +27,7 @@ describe("Home tests", () => {
   });
 
   test("Button has message", () => {
-    render(<Home />);
+    render(<Welcome />);
 
     const button = screen.getByRole("button");
     const buttonText = screen.getByText("Get started");

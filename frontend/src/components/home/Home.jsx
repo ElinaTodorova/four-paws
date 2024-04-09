@@ -1,35 +1,32 @@
+import { useEffect, useState } from "react";
+import AnimalsCategory from "./animalsCategory/AnimalsCategory";
+
 import "./Home.sass";
-import { Button } from "antd";
+import Carrousel from "./carrousel/Carrousel";
 
 export default function Home() {
+  const [animals, setAnimals] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/animals`)
+        .then((res) => res.json())
+        .then((data) => setAnimals(data))
+        .catch((err) => console.error(err));
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <section className="header">
-      <div className="content">
-        <div className="info">
-          <h1>Four paws</h1>
-          <p role="presentation">
-            Here, every story has a four-legged hero in search of a loving home,
-            and every visitor has the power to change a life, one wagging tail
-            at a time.
-          </p>
+    <>
+      <Carrousel />
+      <section className="infos_category">
+        <h2>Our Categories</h2>
+        <div className="category">
+          <AnimalsCategory animals={animals} />
         </div>
-        <div className="button-container">
-          <Button
-            type="primary"
-            size="large"
-            className="button-start"
-            block
-            role="button"
-          >
-            Get started
-          </Button>
-        </div>
-      </div>
-      <img
-        className="image_welcome"
-        src="/images/homeImg.png"
-        alt="Dog and Cat running"
-      />
-    </section>
+      </section>
+    </>
   );
 }
