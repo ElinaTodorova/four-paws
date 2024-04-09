@@ -3,9 +3,6 @@
 // Load environment variables from .env file
 require("dotenv").config();
 
-// Import Faker library for generating fake data
-const { faker } = require("@faker-js/faker");
-
 // Import database client
 const database = require("./database/client");
 
@@ -16,20 +13,23 @@ const seed = async () => {
     const queries = [];
 
     /* ************************************************************************* */
-
     // Generating Seed Data
+    // queries.push(
+    //   database.query("insert into role(role) values ('admin'), ('guest');")
+    // );
 
     // Optional: Truncate tables (remove existing data)
-    await database.query("truncate item");
+    await database.query("delete from role");
+    queries.push(
+      database.query("insert into role(role) values ('admin'), ('guest');")
+    );
 
-    // Insert fake data into the 'item' table
-    for (let i = 0; i < 10; i += 1) {
-      queries.push(
-        database.query("insert into item(title) values (?)", [
-          faker.lorem.word(),
-        ])
-      );
-    }
+    await database.query("delete from animal");
+    queries.push(
+      database.query(
+        "insert into animal(name_animal, image_url) VALUES ('Dog', 'images/dog1.jpg'), ('Cat', 'images/cat.png')"
+      )
+    );
 
     /* ************************************************************************* */
 

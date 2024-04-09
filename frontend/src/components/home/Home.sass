@@ -1,53 +1,14 @@
 @import '../../variables'
-        
-.header
-    @include flexbox_centre()
-    flex-direction: column
-        
-    p
-            font-size: 1.5rem
-            text-align: center
-            margin-top: 0
-    h1 
-            margin-bottom: 0.5rem
+
+.infos_category
+    @include flexbox_column()
+
+    h2
+        font-size: 3rem
+
+    .category 
+        @include flexbox_centre
+        gap: 2rem
+
+
     
-    .info 
-        order: 1
-        margin: 0 0.7rem
-    .image_welcome
-        order: 2
-    .button-container
-        order: 3
-        
-.content 
-    @include flexbox_centre()
-    flex-direction: column
-
-    .button-container 
-            width: 70%
-            height: 3rem
-        
-    .button-start 
-            background-color: $primary_color
-            font-weight: bold
-            font-size: 1.5rem
-            height: 100%
-            
-    .button-start.ant-btn-primary:hover 
-            background: $secondary_color
-
-
-   
-@media screen and (width > 760px) 
-    .header
-
-        flex-direction: row
-
-        .image_welcome 
-            order: 1
-            flex: 1
-
-    .content 
-            order: 2
-            flex: 1
-       
