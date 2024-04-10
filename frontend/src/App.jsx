@@ -4,7 +4,7 @@ import "./App.sass";
 import Welcome from "./components/welcome/Welcome";
 
 import Paths from "./paths/paths";
-import Home from "./components/home/Home";
+import HomePage from "./pages/Home/HomePage";
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path={Paths.Home} element={<Welcome />} />
-        <Route path={Paths.Welcome} element={<Home />} />
+        <Route path={Paths.Welcome} element={<HomePage />} />
       </Routes>
     </>
   );
