@@ -3,14 +3,14 @@ import "./AnimalCategory.sass";
 
 export default function AnimalsCategory({ animals }) {
   return (
-    <>
+    <div className="animalsInfo">
       {animals.map((animal) => (
-        <div className="animalsInfo">
+        <div>
           <img src={animal.image_url} alt={animal.name_animal} />
           <h3>{animal.name_animal}</h3>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 
