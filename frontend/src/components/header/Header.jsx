@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Header.sass";
+import SidebarComponent from "../sidebarComponent/SidebarComponent";
 
 export default function Header() {
   return (
@@ -17,6 +18,8 @@ export default function Header() {
         icon={faUser}
         style={{ color: "#ffffff" }}
       />
+      <h2>Four Paws</h2>
+      <SidebarComponent />
     </nav>
   );
 }
