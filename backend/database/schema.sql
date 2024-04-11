@@ -3,8 +3,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 create table category_product (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   category VARCHAR(150),
-  image_url VARCHAR(255),
-  isSecondHand Boolean 
+  image_url VARCHAR(255)
 );
 
 create table animal(

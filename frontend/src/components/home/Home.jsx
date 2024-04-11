@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import * as services from "../../servicesRaquest/categoryServices";
 import AnimalsCategory from "./animalsCategory/AnimalsCategory";
 
 import "./Home.sass";
@@ -9,10 +8,14 @@ export default function Home() {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
-    services
-      .getAllAnimals()
-      .then((result) => setAnimals(result))
-      .catch((err) => console.error(err));
+    const fetchData = async () => {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/animals`)
+        .then((res) => res.json())
+        .then((data) => setAnimals(data))
+        .catch((err) => console.error(err));
+    };
+
+    fetchData();
   }, []);
 
   return (
