@@ -20,10 +20,10 @@ export default function Home() {
 
   return (
     <>
-      <Carrousel />
+      <Carrousel role="group" />
       <section className="infos_category">
         <h2>Our Categories</h2>
-        <div className="category">
+        <div className="category" role="list">
           <AnimalsCategory animals={animals} />
         </div>
       </section>

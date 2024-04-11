@@ -1,9 +1,25 @@
-import { screen, render } from "@testing-library/react";
+import { fireEvent, screen, render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import Welcome from "./Welcome";
 
 describe("Home tests", () => {
+  test("Renders Welcome component", () => {
+    const { getByText } = render(
+      <BrowserRouter>
+        <Welcome />
+      </BrowserRouter>
+    );
+
+    const button = getByText(/Get started/i);
+    expect(button).toBeInTheDocument();
+    fireEvent.click(button);
+  });
   test("Have an H1", () => {
-    render(<Welcome />);
+    render(
+      <BrowserRouter>
+        <Welcome />
+      </BrowserRouter>
+    );
 
     const title = screen.getByText("Four paws");
 
@@ -11,7 +27,11 @@ describe("Home tests", () => {
   });
 
   test("Have a into paragraph", () => {
-    render(<Welcome />);
+    render(
+      <BrowserRouter>
+        <Welcome />
+      </BrowserRouter>
+    );
 
     const paragraph = screen.getByRole("presentation");
 
@@ -19,16 +39,22 @@ describe("Home tests", () => {
   });
 
   test("Have an image", () => {
-    render(<Welcome />);
-
+    render(
+      <BrowserRouter>
+        <Welcome />
+      </BrowserRouter>
+    );
     const button = screen.getByRole("button");
 
     expect(button).toBeInTheDocument();
   });
 
   test("Button has message", () => {
-    render(<Welcome />);
-
+    render(
+      <BrowserRouter>
+        <Welcome />
+      </BrowserRouter>
+    );
     const button = screen.getByRole("button");
     const buttonText = screen.getByText("Get started");
 
