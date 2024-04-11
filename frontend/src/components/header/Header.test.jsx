@@ -5,9 +5,9 @@ describe("Test for Header", () => {
   test("Have a header", () => {
     render(<Header />);
 
-    const header = screen.getByRole("navigation");
+    const header = screen.getAllByRole("navigation");
 
-    expect(header).toBeInTheDocument();
+    expect(header).toHaveLength(2);
   });
 
   test("Have two item in header", () => {
