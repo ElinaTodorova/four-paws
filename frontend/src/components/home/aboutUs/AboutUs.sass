@@ -1,9 +1,26 @@
 @import '../../../variables'
-    
-.about
+
+.background
     margin: 0 auto
     width: 70%
     margin-bottom: 5rem
+    position: relative
+
+.image-overlay 
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-image: url("/images/homeImg.png")
+  background-size: cover
+  background-position: center
+  opacity: 0.3
+
+.about
+    section 
+        position: relative
+        z-index: 100
 
     h2
         font-size: 3.5rem
@@ -13,5 +30,5 @@
         font-family: $title_font
         text-align: center
     p
-        font-size: 1.3rem
+        font-size: 1.5rem
         text-align: center
