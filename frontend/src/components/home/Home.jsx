@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import AnimalsCategory from "./animalsCategory/AnimalsCategory";
+import Carrousel from "./carrousel/Carrousel";
 
 import "./Home.sass";
-import Carrousel from "./carrousel/Carrousel";
+import AboutUs from "./aboutUs/AboutUs";
 
 export default function Home() {
   const [animals, setAnimals] = useState([]);
@@ -27,6 +28,7 @@ export default function Home() {
           <AnimalsCategory animals={animals} />
         </div>
       </section>
+      <AboutUs />
     </>
   );
 }
