@@ -4,11 +4,16 @@
     @include flexbox_column()
 
     h2
-        font-size: 3rem
+        font-size: 3.5rem
 
     .category 
         @include flexbox_centre
         gap: 2rem
+
+@media screen and (min-width: 768px)
+    .infos_category
+        .category 
+            gap :5rem
 
 
     
