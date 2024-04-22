@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,13 +8,15 @@ import {
   faLocationDot,
   faRecycle,
 } from "@fortawesome/free-solid-svg-icons";
-import "./SidebarComponent.sass"; // Import du fichier CSS pour styliser la barre latérale
+
+import Paths from "../../paths/paths";
+import "./SidebarComponent.sass";
 
 export default function SidebarComponent() {
   const [collapsed, setCollapsed] = useState(true);
 
   const handleMauseCollapsed = () => {
-    setCollapsed(!collapsed);
+    setCollapsed((state) => !state);
   };
 
   return (
@@ -25,7 +28,9 @@ export default function SidebarComponent() {
       <Sidebar collapsed={collapsed}>
         <Menu>
           <MenuItem className="item">
-            <FontAwesomeIcon icon={faPaw} className="icon" /> Home
+            <Link to={Paths.Welcome}>
+              <FontAwesomeIcon icon={faPaw} className="icon" /> Home
+            </Link>
           </MenuItem>
           <MenuItem className="item">
             <FontAwesomeIcon icon={faUser} className="icon" /> Profil

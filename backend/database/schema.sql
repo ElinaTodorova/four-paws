@@ -2,7 +2,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 create table category_product (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  category VARCHAR(150),
+  category VARCHAR(150) NOT NULL,
   image_url VARCHAR(255)
 );
 
@@ -16,8 +16,10 @@ create table product(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name_product VARCHAR(150) NOT NULL,
   description_product VARCHAR(255) NOT NULL,
+  price INT NOT NULL,
   animal_id INT,
   category_product_id INT,
+  isSecondHand BOOLEAN NOT NULL,
   CONSTRAINT category_product_id FOREIGN KEY (category_product_id) REFERENCES category_product(id),
   CONSTRAINT animal_id FOREIGN KEY (animal_id) REFERENCES animal(id)
 );
@@ -39,7 +41,6 @@ create table user(
 create table cart(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   quantity INT NOT NULL,
-  price INT NOT NULL,
   user_id INT,
   product_id INT,
   CONSTRAINT user_id FOREIGN KEY (user_id) REFERENCES user(id),

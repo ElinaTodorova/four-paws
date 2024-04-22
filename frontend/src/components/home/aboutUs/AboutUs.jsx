@@ -5,9 +5,8 @@ export default function AboutUs() {
     <div className="background">
       <div className="image-overlay" />
       <div className="about">
-        <section>
-          <h2>About Us</h2>
-
+        <h2>About Us</h2>
+        <section role="article">
           <h3>Welcome to Four Paws!</h3>
 
           <p>
@@ -22,7 +21,7 @@ export default function AboutUs() {
             you covered.
           </p>
         </section>
-        <section>
+        <section role="article">
           <h3>New and Pre-owned</h3>
 
           <p>
@@ -34,7 +33,7 @@ export default function AboutUs() {
             comfortable life.
           </p>
         </section>
-        <section>
+        <section role="article">
           <h3>Dog and Cat</h3>
           <p>
             Specializing in the needs of dogs and cats, we place particular
@@ -44,7 +43,7 @@ export default function AboutUs() {
             your dog or cat, whether they're young or old.
           </p>
         </section>
-        <section>
+        <section role="article">
           <p>
             At Four Paws, we're more than just a pet accessory store. We're a
             dedicated community of passionate pet owners who share a common
