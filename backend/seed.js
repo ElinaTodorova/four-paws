@@ -31,6 +31,27 @@ const seed = async () => {
       )
     );
 
+    await database.query("delete from category_product");
+    queries.push(
+      database.query(
+        "INSERT INTO category_product(category) VALUES ('Food'), ('Care and Hygiene'), ('Toys'), ('Clothes'), ('Accessories')"
+      )
+    );
+
+    await database.query("delete from subcategory_image");
+    queries.push(
+      database.query(
+        "INSERT INTO subcategory_image(image_url) VALUES ('images/croquettes.png'), ('images/treatsDog.png'), ('images/cansDog'), ('images/dogAcc.png'), ('images/shampooDog.jpg'), ('images/dentalSticksDog.jpg')"
+      )
+    );
+
+    await database.query("delete from subcategory");
+    queries.push(
+      database.query(
+        "INSERT INTO subcategory(subcategory_name, category_id, image_id) VALUES ('Dry Food', 1, 1), ('Treats&Chews', 1, 2), ('Cans/Pouches/Trays', 1, 3), ('Oral care',2, 6)"
+      )
+    );
+
     /* ************************************************************************* */
 
     // Wait for all the insertion queries to complete
