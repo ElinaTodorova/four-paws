@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AnimalsCategory from "./animalsCategory/AnimalsCategory";
 import Carrousel from "./carrousel/Carrousel";
+import * as services from "../../services/animalsService";
 
 import "./Home.sass";
 import AboutUs from "./aboutUs/AboutUs";
@@ -9,14 +10,12 @@ export default function Home() {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/animals`)
-        .then((res) => res.json())
-        .then((data) => setAnimals(data))
-        .catch((err) => console.error(err));
-    };
-
-    fetchData();
+    services
+      .getAll()
+      .then((result) => setAnimals(result))
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (

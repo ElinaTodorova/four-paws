@@ -2,8 +2,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 CREATE TABLE category_product (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  category VARCHAR(150) NOT NULL,
-  image_url VARCHAR(255)
+  category VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE subcategory (
