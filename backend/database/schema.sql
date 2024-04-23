@@ -1,10 +1,19 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP TABLE IF EXISTS animal;
+CREATE TABLE animal(
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  name_animal VARCHAR(150) NOT NULL,
+  image_url VARCHAR(255)
+);
+
 DROP TABLE IF EXISTS category_product;
 CREATE TABLE category_product (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   category VARCHAR(150) NOT NULL,
-  image_category VARCHAR(150) NOT NULL
+  image_category VARCHAR(150) NOT NULL,
+  animal_id INT,
+  CONSTRAINT animal_id FOREIGN KEY (animal_id) REFERENCES animal(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 DROP TABLE IF EXISTS subcategory_image;
@@ -23,12 +32,6 @@ CREATE TABLE subcategory (
   CONSTRAINT image_id FOREIGN KEY (image_id) REFERENCES subcategory_image(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS animal;
-CREATE TABLE animal(
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  name_animal VARCHAR(150) NOT NULL,
-  image_url VARCHAR(255)
-);
 
 DROP TABLE IF EXISTS product;
 CREATE TABLE product(
