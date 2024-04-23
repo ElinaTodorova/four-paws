@@ -1,30 +1,36 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP TABLE IF EXISTS category_product;
 CREATE TABLE category_product (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  category VARCHAR(150) NOT NULL
+  category VARCHAR(150) NOT NULL,
+  image_category VARCHAR(150) NOT NULL
 );
 
-CREATE TABLE subcategory (
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  subcategory_name VARCHAR(150) NOT NULL,
-  category_id INT,
-  image_id INT,
-  CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category_product(id),
-  CONSTRAINT fk_image_id FOREIGN KEY (image_id) REFERENCES subcategory_image(id)
-);
-
+DROP TABLE IF EXISTS subcategory_image;
 CREATE TABLE subcategory_image (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   image_url VARCHAR(255)
 );
 
+DROP TABLE IF EXISTS subcategory;
+CREATE TABLE subcategory (
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  subcategory_name VARCHAR(150) NOT NULL,
+  category_id INT,
+  image_id INT,
+  CONSTRAINT category_id FOREIGN KEY (category_id) REFERENCES category_product(id) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT image_id FOREIGN KEY (image_id) REFERENCES subcategory_image(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS animal;
 CREATE TABLE animal(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name_animal VARCHAR(150) NOT NULL,
   image_url VARCHAR(255)
 );
 
+DROP TABLE IF EXISTS product;
 CREATE TABLE product(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name_product VARCHAR(150) NOT NULL,
@@ -39,11 +45,13 @@ CREATE TABLE product(
   CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animal(id)
 );
 
+DROP TABLE IF EXISTS role;
 CREATE TABLE role(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   role VARCHAR(50) 
 );
 
+DROP TABLE IF EXISTS user;
 CREATE TABLE user(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(100) NOT NULL,
@@ -53,6 +61,7 @@ CREATE TABLE user(
   CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
+DROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   quantity INT NOT NULL,

@@ -1,0 +1,27 @@
+@import '../../variables'
+
+.header
+    h2
+        font-family: $title_font
+        font-size: 4rem
+    p
+        font-size: 1rem
+
+.allCategories
+    margin-bottom: 5rem
+
+@media screen and (min-width: 768px)
+    .header
+        @include flexbox_column()
+
+        h2
+            font-size: 6rem
+        p
+            font-size: 2rem
+    .allCategories
+        @include flexbox_centre()
+        gap: 3rem
+        flex-wrap: wrap
+
+    .infos-categories
+        margin: 0 calc(10rem - 4rem)

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.6rem;
+  height: 3.5rem;
+  background-color: #32de84;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    display: none;
+  }
+} /*# sourceMappingURL=Footer.css.map */

@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.header h2 {
+  font-family: "Italianno", sans-serif;
+  font-size: 4rem;
+}
+.header p {
+  font-size: 1rem;
+} /*# sourceMappingURL=Category.css.map */
