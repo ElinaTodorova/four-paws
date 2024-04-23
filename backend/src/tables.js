@@ -5,13 +5,13 @@
 // Import the manager modules responsible for handling data operations on the tables
 const ItemManager = require("./models/ItemManager");
 const AnimalManager = require("./models/AnimalManager");
-const DogManager = require("./models/DogManager");
 const DogCategoryManager = require("./models/DogCategoryManager");
+const CategoriesManager = require("./models/CategoriesManager");
 
 const managers = [
   ItemManager,
   AnimalManager,
-  DogManager,
+  CategoriesManager,
   DogCategoryManager,
   // Add other managers here
 ];
