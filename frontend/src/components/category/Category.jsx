@@ -16,7 +16,7 @@ export default function Category() {
   }, []);
 
   return (
-    <section>
+    <section className="infos-categories">
       <div className="header">
         <h2>Dog</h2>
         <p>
@@ -26,9 +26,11 @@ export default function Category() {
           you covered.
         </p>
       </div>
-      {categories.map((category) => (
-        <CategoryItem category={category} />
-      ))}
+      <div className="allCategories">
+        {categories.map((category) => (
+          <CategoryItem category={category} />
+        ))}
+      </div>
     </section>
   );
 }

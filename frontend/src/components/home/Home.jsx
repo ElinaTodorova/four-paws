@@ -19,7 +19,6 @@ export default function Home() {
         console.error(err);
       });
   }, []);
-
   return (
     <>
       <Carrousel role="group" />

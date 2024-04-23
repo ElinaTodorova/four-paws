@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.sidebar {
+  display: none;
+}
+.sidebar a {
+  text-decoration: none;
+  color: black;
+}
+.sidebar span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
+  .sidebar nav {
+    height: 100%;
+  }
+  .css-ewdv3l {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+  }
+  .css-ewdv3l li:first-child {
+    margin-top: 1rem;
+  }
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .item span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+  }
+} /*# sourceMappingURL=SidebarComponent.css.map */

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.infos_category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infos_category h2 {
+  font-size: 3.5rem;
+}
+.infos_category .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .infos_category .category {
+    gap: 20rem;
+    margin-top: 4rem;
+  }
+} /*# sourceMappingURL=Home.css.map */

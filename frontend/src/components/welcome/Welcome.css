@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0;
+}
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+.header .info {
+  order: 1;
+  margin: 0 0.7rem;
+}
+.header .image_welcome {
+  order: 2;
+}
+.header .button-container {
+  order: 3;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content .button-container {
+  width: 70%;
+  height: 3rem;
+}
+.content .button-start {
+  background-color: #32de84;
+  font-weight: bold;
+  font-size: 1.5rem;
+  height: 100%;
+}
+.content .button-start.ant-btn-primary:hover {
+  background: #50c878;
+}
+
+@media screen and (width > 760px) {
+  .header {
+    flex-direction: row;
+  }
+  .header .image_welcome {
+    order: 1;
+    flex: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .content {
+    order: 2;
+    flex: 1;
+  }
+} /*# sourceMappingURL=Welcome.css.map */

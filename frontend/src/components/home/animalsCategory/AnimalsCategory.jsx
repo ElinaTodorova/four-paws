@@ -6,7 +6,7 @@ import pathToUrl from "../../../utils/pathsToUrl";
 
 export default function AnimalsCategory({ animals }) {
   return (
-    <>
+    <div className="animalsCat">
       {animals.map((animal) => (
         <Link to={pathToUrl(Paths.Categories, { animal: animal.name_animal })}>
           <div className="animalsInfo">
@@ -15,7 +15,7 @@ export default function AnimalsCategory({ animals }) {
           </div>
         </Link>
       ))}
-    </>
+    </div>
   );
 }
 

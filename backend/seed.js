@@ -23,7 +23,7 @@ const seed = async () => {
     await database.query("delete from category_product");
     queries.push(
       database.query(
-        "INSERT INTO category_product(category, image_category) VALUES ('Food', 'images/dryFoodD.png'), ('Care and Hygiene', 'images/hygiene.jpg'), ('Toys', 'images/toys.jpg'), ('Clothes', 'images/clothes.jpg'), ('Accessories', 'images/dogAcc.png')"
+        "INSERT INTO category_product(category, image_category) VALUES ('Food', '/images/dryFoodD.png'), ('Care and Hygiene', '/images/hygiene.jpg'), ('Toys', '/images/toys.jpg'), ('Clothes', '/images/clothes.jpg'), ('Accessories', '/images/dogAcc.png')"
       )
     );
 
@@ -41,17 +41,17 @@ const seed = async () => {
       )
     );
 
-    // await database.query("delete from role");
-    // queries.push(
-    //   database.query("insert into role(role) values ('admin'), ('guest');")
-    // );
+    await database.query("delete from role");
+    queries.push(
+      database.query("insert into role(role) values ('admin'), ('guest');")
+    );
 
-    // await database.query("delete from animal");
-    // queries.push(
-    //   database.query(
-    //     "insert into animal(name_animal, image_url) VALUES ('Dog', 'images/dog1.jpg'), ('Cat', 'images/cat.png')"
-    //   )
-    // );
+    await database.query("delete from animal");
+    queries.push(
+      database.query(
+        "insert into animal(name_animal, image_url) VALUES ('Dog', 'images/dog1.jpg'), ('Cat', 'images/cat.png')"
+      )
+    );
 
     /* ************************************************************************* */
 
