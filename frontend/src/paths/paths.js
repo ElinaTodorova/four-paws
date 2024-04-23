@@ -1,6 +1,7 @@
 const Paths = {
   Home: "/",
   Welcome: "/welcome",
+  Categories: "/categories/:animal",
   // CreateGame : "/games/create",
   // Login : "/login",
   // Register: "/register",

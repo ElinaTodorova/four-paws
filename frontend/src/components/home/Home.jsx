@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import AnimalsCategory from "./animalsCategory/AnimalsCategory";
-import Carrousel from "./carrousel/Carrousel";
+
 import * as services from "../../services/animalsService";
 
-import "./Home.sass";
+import AnimalsCategory from "./animalsCategory/AnimalsCategory";
+import Carrousel from "./carrousel/Carrousel";
 import AboutUs from "./aboutUs/AboutUs";
+
+import "./Home.sass";
 
 export default function Home() {
   const [animals, setAnimals] = useState([]);
