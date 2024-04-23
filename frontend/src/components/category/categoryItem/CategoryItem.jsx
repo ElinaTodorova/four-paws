@@ -1,3 +1,8 @@
 // export default function CategoryItem({ category }) {
-//   return <h2>{category.category}</h2>;
+//   return (
+//     <div>
+//       <h2>{category.category}</h2>
+//       <img src={category.image_category} alt={category.category} />
+//     </div>
+//   );
 // }

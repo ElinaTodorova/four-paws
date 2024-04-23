@@ -19,22 +19,11 @@ const seed = async () => {
     // );
 
     // Optional: Truncate tables (remove existing data)
-    await database.query("delete from role");
-    queries.push(
-      database.query("insert into role(role) values ('admin'), ('guest');")
-    );
-
-    await database.query("delete from animal");
-    queries.push(
-      database.query(
-        "insert into animal(name_animal, image_url) VALUES ('Dog', 'images/dog1.jpg'), ('Cat', 'images/cat.png')"
-      )
-    );
 
     await database.query("delete from category_product");
     queries.push(
       database.query(
-        "INSERT INTO category_product(category) VALUES ('Food'), ('Care and Hygiene'), ('Toys'), ('Clothes'), ('Accessories')"
+        "INSERT INTO category_product(category, image_category) VALUES ('Food', 'images/dryFoodD.png'), ('Care and Hygiene', 'images/hygiene.jpg'), ('Toys', 'images/toys.jpg'), ('Clothes', 'images/clothes.jpg'), ('Accessories', 'images/dogAcc.png')"
       )
     );
 
@@ -51,6 +40,18 @@ const seed = async () => {
         "INSERT INTO subcategory(subcategory_name, category_id, image_id) VALUES ('Dry Food', 1, 1), ('Treats&Chews', 1, 2), ('Cans/Pouches/Trays', 1, 3), ('Oral care',2, 6)"
       )
     );
+
+    // await database.query("delete from role");
+    // queries.push(
+    //   database.query("insert into role(role) values ('admin'), ('guest');")
+    // );
+
+    // await database.query("delete from animal");
+    // queries.push(
+    //   database.query(
+    //     "insert into animal(name_animal, image_url) VALUES ('Dog', 'images/dog1.jpg'), ('Cat', 'images/cat.png')"
+    //   )
+    // );
 
     /* ************************************************************************* */
 
