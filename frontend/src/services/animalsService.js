@@ -8,6 +8,12 @@ export const getAll = async () => {
   return result;
 };
 
+export const getByAnimal = async (animal) => {
+  const result = await request.get(`${baseUrl}/api/animals/${animal}`);
+
+  return result;
+};
+
 export const create = async (data) => {
   await request.post(baseUrl, data);
 };

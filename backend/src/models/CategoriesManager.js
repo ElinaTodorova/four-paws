@@ -5,19 +5,13 @@ class CategoriesManager extends AbstractManager {
     super({ table: "category_product" });
   }
 
-  async readAllDogs() {
+  async readAll(animal) {
     const [rows] = await this.database.query(
-      `select * from ${this.table} where animal_id = 1`
+      `select name_animal, image_url, category, image_category from ${this.table} 
+      INNER JOIN animal ON animal.id = ${this.table}.animal_id
+      where name_animal = ?`,
+      [animal]
     );
-
-    return rows;
-  }
-
-  async readAllCats() {
-    const [rows] = await this.database.query(
-      `select * from ${this.table} where animal_id = 2`
-    );
-
     return rows;
   }
 }

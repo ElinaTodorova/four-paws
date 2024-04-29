@@ -14,12 +14,12 @@ const categoriesControllers = require("./controllers/categoriesControllers");
 
 // Route to get a list of items
 router.get("/animals", animalControllers.browse);
-router.get("/categoriesDog", categoriesControllers.browseDogs);
-router.get("/categoriesCat", categoriesControllers.browseCats);
 router.get("/catalog", dogCategoryControllers.browse);
 
 // Route to get a specific item by ID
 router.get("/items/:id", itemControllers.read);
+router.get("/categories/:animal", categoriesControllers.browse);
+router.get("/animals/:animal", animalControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);

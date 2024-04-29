@@ -2,14 +2,8 @@ import * as request from "../lib/request";
 
 const baseUrl = `${import.meta.env.VITE_BACKEND_URL}`;
 
-export const getAllDogs = async () => {
-  const result = await request.get(`${baseUrl}/api/categoriesDog`);
-
-  return result;
-};
-
-export const getAllCats = async () => {
-  const result = await request.get(`${baseUrl}/api/categoriesCat`);
+export const getAll = async (animal) => {
+  const result = await request.get(`${baseUrl}/api/categories/${animal}`);
 
   return result;
 };
