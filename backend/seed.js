@@ -22,7 +22,7 @@ const seed = async () => {
     await database.query("delete from animal");
     queries.push(
       database.query(
-        "insert into animal(name_animal, image_url) VALUES ('Dog', 'images/dog1.jpg'), ('Cat', 'images/cat.png')"
+        "insert into animal(name_animal, image_url, description_category) VALUES ('Dog', 'images/dog1.jpg', 'Explore our wide range of product categories designed to enhance the well-being and happiness of your canine companion. From premium nutrition to stylish accessories and everything in between, we''ve got you covered.'), ('Cat', 'images/cat.png', 'At Four Paws, we understand the unique bond between you and your beloved cat. That''s why we''re dedicated to providing a diverse range of products tailored to meet every need and desire of your furry friend.')"
       )
     );
 

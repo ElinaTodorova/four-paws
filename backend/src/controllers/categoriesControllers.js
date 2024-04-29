@@ -2,23 +2,12 @@
 const tables = require("../tables");
 
 // The B of BREAD - Browse (Read All) operation
-const browseDogs = async (req, res, next) => {
+const browse = async (req, res, next) => {
   try {
     // Fetch all items from the database
-    const products = await tables.category_product.readAllDogs();
-
-    // Respond with the items in JSON format
-    res.json(products);
-  } catch (err) {
-    // Pass any errors to the error-handling middleware
-    next(err);
-  }
-};
-
-const browseCats = async (req, res, next) => {
-  try {
-    // Fetch all items from the database
-    const products = await tables.category_product.readAllCats();
+    const params = req.params.animal;
+    const animal = params.toLowerCase();
+    const products = await tables.category_product.readAll(animal);
 
     // Respond with the items in JSON format
     res.json(products);
@@ -30,8 +19,7 @@ const browseCats = async (req, res, next) => {
 
 // Ready to export the controller functions
 module.exports = {
-  browseDogs,
-  browseCats,
+  browse,
   // read,
   // edit,
   // add,
