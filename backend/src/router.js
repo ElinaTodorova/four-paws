@@ -9,17 +9,16 @@ const router = express.Router();
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
 const animalControllers = require("./controllers/animalControllers");
-const dogCategoryControllers = require("./controllers/dogCategoryControllers");
 const categoriesControllers = require("./controllers/categoriesControllers");
-
+const subcategoriesControllers = require("./controllers/SubcategoriesControllers");
 // Route to get a list of items
 router.get("/animals", animalControllers.browse);
-router.get("/catalog", dogCategoryControllers.browse);
 
 // Route to get a specific item by ID
 router.get("/items/:id", itemControllers.read);
 router.get("/categories/:animal", categoriesControllers.browse);
 router.get("/animals/:animal", animalControllers.read);
+router.get("/catalog/:animal", subcategoriesControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);

@@ -10,6 +10,7 @@ import "./Category.sass";
 export default function Category() {
   const [categories, setCategories] = useState([]);
   const [animalData, setAnimalData] = useState({});
+
   const { animal } = useParams();
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function Category() {
       </div>
       <div className="allCategories">
         {categories.map((category) => (
-          <CategoryItem category={category} />
+          <CategoryItem key={category.category} category={category} />
         ))}
       </div>
     </section>
