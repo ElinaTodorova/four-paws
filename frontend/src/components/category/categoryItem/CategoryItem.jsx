@@ -11,10 +11,8 @@ export default function CategoryItem({ category }) {
 }
 
 CategoryItem.propTypes = {
-  category: PropTypes.arrayOf(
-    PropTypes.shape({
-      category: PropTypes.string.isRequired,
-      image_category: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  category: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+    image_category: PropTypes.string.isRequired,
+  }).isRequired,
 };

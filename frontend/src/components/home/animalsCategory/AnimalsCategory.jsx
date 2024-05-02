@@ -8,7 +8,10 @@ export default function AnimalsCategory({ animals }) {
   return (
     <div className="animalsCat">
       {animals.map((animal) => (
-        <Link to={pathToUrl(Paths.Categories, { animal: animal.name_animal })}>
+        <Link
+          to={pathToUrl(Paths.Categories, { animal: animal.name_animal })}
+          key={animal.id}
+        >
           <div className="animalsInfo">
             <img src={animal.image_url} alt={animal.name_animal} />
             <h3>{animal.name_animal}</h3>
