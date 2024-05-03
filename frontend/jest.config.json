@@ -4,5 +4,6 @@
   "moduleNameMapper": {
     "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/test/fileMock.js",
     "\\.(css|less|sass)$": "identity-obj-proxy"
-  }
+  },
+  "setupFiles": ["<rootDir>/.jest/setEnvVars.js"]
 }

@@ -1,9 +1,14 @@
+import { MemoryRouter } from "react-router-dom";
 import { screen, render } from "@testing-library/react";
 import Header from "./Header";
 
 describe("Test for Header", () => {
   test("Have a header", () => {
-    render(<Header />);
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
 
     const header = screen.getAllByRole("navigation");
 
@@ -11,7 +16,11 @@ describe("Test for Header", () => {
   });
 
   test("Have two item in header", () => {
-    render(<Header />);
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
 
     const elements = screen.getAllByTestId("svg-icon");
 

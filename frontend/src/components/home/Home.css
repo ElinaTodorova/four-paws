@@ -17,8 +17,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .infos_category .category {
-    gap: 20rem;
+  .category {
+    gap: 5rem;
     margin-top: 4rem;
+  }
+  .animalsCat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
   }
 } /*# sourceMappingURL=Home.css.map */
