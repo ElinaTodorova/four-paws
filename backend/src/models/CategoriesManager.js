@@ -7,7 +7,7 @@ class CategoriesManager extends AbstractManager {
 
   async readAll(animal) {
     const [rows] = await this.database.query(
-      `select ${this.table}.id name_animal, image_url, category, image_category from ${this.table} 
+      `select ${this.table}.id, name_animal, image_url, category, image_category from ${this.table} 
       INNER JOIN animal ON animal.id = ${this.table}.animal_id
       where name_animal = ?`,
       [animal]

@@ -5,5 +5,35 @@
   font-size: 4rem;
 }
 .header p {
-  font-size: 1rem;
+  font-size: 1.3rem;
+}
+
+.allCategories {
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header h2 {
+    font-size: 6rem;
+  }
+  .header p {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .allCategories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .infos-categories {
+    margin: 0 6rem;
+  }
 } /*# sourceMappingURL=Category.css.map */

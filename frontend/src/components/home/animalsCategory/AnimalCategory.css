@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.animalsCat a {
+  text-decoration: none;
+  color: black;
+}
+
 .animalsInfo img {
   width: 12rem;
   height: 12rem;
