@@ -26,7 +26,19 @@ export default function SidebarComponent() {
       onMouseLeave={handleMauseCollapsed}
     >
       <Sidebar collapsed={collapsed}>
-        <Menu>
+        <Menu
+          menuItemStyles={{
+            button: {
+              height: "4.7rem",
+              // the active class will be added automatically by react router
+              // so we can use it to style the active menu item
+              [`&:hover`]: {
+                backgroundColor: "#50C878",
+                color: "#FFFFFF",
+              },
+            },
+          }}
+        >
           <MenuItem className="item">
             <Link to={Paths.Welcome}>
               <FontAwesomeIcon icon={faPaw} className="icon" /> Home
