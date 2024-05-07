@@ -1,13 +1,15 @@
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
 import Home from "../../components/home/Home";
+import Header from "../../components/header/Header";
+import SidebarComponent from "../../components/sidebarComponent/SidebarComponent";
 
-// import "./HomePage.sass";
+import "./HomePage.sass";
 
 export default function HomePage() {
   return (
     <>
-      <Header />
+      <Header className="mobile" />
+      <SidebarComponent />
       <Home />
       <Footer classname="footer" />
     </>
