@@ -33,20 +33,30 @@ CREATE TABLE subcategory (
   CONSTRAINT image_id FOREIGN KEY (image_id) REFERENCES subcategory_image(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS brand;
+CREATE TABLE brand (
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  name_brand VARCHAR(100),
+  image_brand VARCHAR(100)
+);
 
 DROP TABLE IF EXISTS product;
 CREATE TABLE product(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name_product VARCHAR(150) NOT NULL,
-  description_product VARCHAR(255) NOT NULL,
-  price INT NOT NULL,
+  product_image VARCHAR(100) NOT NULL,
+  description_product TEXT NOT NULL,
+  price REAL NOT NULL,
+  unity VARCHAR (10) NOT NULL,
   animal_id INT,
   category_product_id INT,
   subcategory_id INT,
+  brand_id INT NOT NULL,
   isSecondHand BOOLEAN NOT NULL,
   CONSTRAINT fk_category_product_id FOREIGN KEY (category_product_id) REFERENCES category_product(id),
   CONSTRAINT fk_subcategory_id FOREIGN KEY (subcategory_id) REFERENCES subcategory(id),
-  CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animal(id)
+  CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animal(id),
+  CONSTRAINT fk_brand_id FOREIGN KEY (brand_id) REFERENCES brand(id)
 );
 
 DROP TABLE IF EXISTS role;

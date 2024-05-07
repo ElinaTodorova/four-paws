@@ -7,12 +7,14 @@ const ItemManager = require("./models/ItemManager");
 const AnimalManager = require("./models/AnimalManager");
 const SubcategoriesManager = require("./models/SubcategoriesManager");
 const CategoriesManager = require("./models/CategoriesManager");
+const ProductManager = require("./models/ProductsManager");
 
 const managers = [
   ItemManager,
   AnimalManager,
   CategoriesManager,
   SubcategoriesManager,
+  ProductManager,
   // Add other managers here
 ];
 

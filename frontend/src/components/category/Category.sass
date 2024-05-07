@@ -10,6 +10,20 @@
 .allCategories
     margin-bottom: 5rem
 
+.radio-group
+        margin-top: 2rem
+        height: 3rem
+        @include flexbox_centre()
+        flex-wrap: wrap
+
+.radio-btn
+        height: 100%
+        font-size: 1rem
+        display: flex
+        justify-content: center
+        align-items: center
+
+ 
 @media screen and (min-width: 768px)
     .header
         @include flexbox_column()
@@ -26,3 +40,18 @@
 
     .infos-categories
         margin: 0 calc(10rem - 4rem)
+
+    .radio-group
+        margin-top: 2rem
+        height: 3.5rem
+        @include flexbox_centre()
+
+    .radio-btn
+        height: 100%
+        font-size: 1.5rem
+        display: flex
+        justify-content: center
+        align-items: center
+
+ 
+        
