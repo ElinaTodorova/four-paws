@@ -12,6 +12,9 @@ const animalControllers = require("./controllers/animalControllers");
 const categoriesControllers = require("./controllers/categoriesControllers");
 // const subcategoriesControllers = require("./controllers/SubcategoriesControllers");
 const productControllers = require("./controllers/productControllers");
+const userControllers = require("./controllers/userControllers");
+
+const { hashPassword } = require("./services/auth");
 // Route to get a list of items
 router.get("/animals", animalControllers.browse);
 
@@ -24,6 +27,7 @@ router.get("/catalog/:animal/:id", productControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);
+router.post("/user/signup", hashPassword, userControllers.signUp);
 
 /* ************************************************************************* */
 
