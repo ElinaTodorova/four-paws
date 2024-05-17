@@ -2,14 +2,12 @@
 
 .container_form
     @include flexbox_centre()
-    margin-top: 3rem
+    margin-top: 2rem
 
     .form
         width: 80vw
         height: 80svh
-        padding: 2rem
-        // background-color: #8cf3ae
-        // background-image: url("/images/bck.jpg")
+        padding: 0.5rem 1.5rem 1.5rem 2rem
         border-radius: 10px
         margin-bottom: 5rem 
 
@@ -17,7 +15,11 @@
             font-size: 1rem
             color: black
         input
-            height: 2.5rem
+            height: 2rem
+        span
+            &:focus,
+            &:hover
+                border-color: $secondary_color  
 .button-start
     background-color: $primary_color
     font-weight: bold
@@ -36,26 +38,30 @@
     &:focus,
     &:hover 
         border-color: $secondary_color  
+.ant-input 
+    background-color: red
 .ant-input-password
     &:focus,    
-    &:hover 
+    &:hover
         border-color: $secondary_color  
     
 .ant-checkbox-inner
     background-color: $secondary_color
 .ant-input-password
-    height: 2.5rem
+    height: 2.3rem
+
+
 @media screen and (min-width: 768px)
     .container_form
         .form
             min-width: 45vw
             height: 60svh
             label
-                font-size: 1.5rem
+                font-size: 1.3rem
             input
-                height: 3.5rem
+                height: 2.2rem
     .ant-input-password
-        height: 3.5rem
+        height: 2.8rem
 
 @media screen and (min-width: 1024px)
     .container_form

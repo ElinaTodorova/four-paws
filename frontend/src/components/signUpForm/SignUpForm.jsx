@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 // import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import "./SignUpForm.sass";
 
@@ -8,6 +8,7 @@ export default function SignUpForm() {
       <Form
         className="form"
         name="basic"
+        autoComplete="off"
         labelCol={{
           span: 10,
         }}
@@ -19,7 +20,6 @@ export default function SignUpForm() {
         }}
         // onFinish={onFinish}
         // onFinishFailed={onFinishFailed}
-        autoComplete="off"
       >
         <h2 className="title">Sign Up</h2>
         <Form.Item
@@ -30,7 +30,13 @@ export default function SignUpForm() {
               required: true,
               message: "Please input your username!",
             },
+            { whitespace: true },
+            {
+              min: 3,
+              message: "Your username must contain at least 3 characters",
+            },
           ]}
+          hasFeedback
         >
           <Input
           // prefix={<UserOutlined className="site-form-item-icon" />}
@@ -46,7 +52,9 @@ export default function SignUpForm() {
               required: true,
               message: "Please input your email!",
             },
+            { type: "email", message: "Please input a valid email" },
           ]}
+          hasFeedback
         >
           <Input />
         </Form.Item>
@@ -59,7 +67,24 @@ export default function SignUpForm() {
               required: true,
               message: "Please input your password!",
             },
+            {
+              min: 3,
+              message: "Your password must contain at least 3 characters",
+            },
+            {
+              pattern: /[A-Z]/,
+              message: "Must contain at least one majuscule!",
+            },
+            {
+              pattern: /\d/,
+              message: "Must contain at least one number!",
+            },
+            {
+              pattern: /[!@#$%^&*(),.?":{}|<>]/,
+              message: "Must contain at least special character!",
+            },
           ]}
+          hasFeedback
         >
           <Input.Password />
         </Form.Item>
@@ -75,17 +100,6 @@ export default function SignUpForm() {
           ]}
         >
           <Input.Password />
-        </Form.Item>
-
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
         <Form.Item
