@@ -33,7 +33,7 @@ export default function SidebarComponent() {
               // the active class will be added automatically by react router
               // so we can use it to style the active menu item
               [`&:hover`]: {
-                backgroundColor: "#50C878",
+                backgroundColor: "rgb(82, 133, 121)",
                 color: "#FFFFFF",
               },
             },

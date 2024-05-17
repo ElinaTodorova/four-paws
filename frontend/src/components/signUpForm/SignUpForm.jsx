@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button, Form, Input } from "antd";
+import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 
+import Header from "../header/Header";
 import register from "../../services/userServices";
 
 import "./SignUpForm.sass";
@@ -27,6 +29,7 @@ export default function SignUpForm() {
 
   return (
     <section className="container_form">
+      <Header />
       <Form
         className="form"
         name="basic"
@@ -43,9 +46,9 @@ export default function SignUpForm() {
           remember: true,
         }}
       >
-        <h2 className="title">Sign Up</h2>
+        <h2 className="title">Create account</h2>
         <Form.Item
-          label="Username"
+          // label="Username"
           name={[RegisterFormKeys.Username]}
           value={userData[RegisterFormKeys.Username]}
           rules={[
@@ -61,11 +64,14 @@ export default function SignUpForm() {
           ]}
           hasFeedback
         >
-          <Input />
+          <Input
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            placeholder="Username"
+          />
         </Form.Item>
 
         <Form.Item
-          label="Email"
+          // label="Email"
           name={[RegisterFormKeys.Email]}
           value={userData[RegisterFormKeys.Email]}
           rules={[
@@ -77,11 +83,13 @@ export default function SignUpForm() {
           ]}
           hasFeedback
         >
-          <Input />
+          <Input
+            prefix={<MailOutlined className="site-form-item-icon" />}
+            placeholder="Email"
+          />
         </Form.Item>
 
         <Form.Item
-          label="Password"
           name={[RegisterFormKeys.Password]}
           value={userData[RegisterFormKeys.Password]}
           rules={[
@@ -108,11 +116,13 @@ export default function SignUpForm() {
           ]}
           hasFeedback
         >
-          <Input.Password />
+          <Input.Password
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            placeholder="Password"
+          />
         </Form.Item>
 
         <Form.Item
-          label="Confirm your password"
           name="confirmPass"
           dependencies={["password"]}
           rules={[
@@ -129,24 +139,17 @@ export default function SignUpForm() {
                 return Promise.reject("Two password does not match!");
               },
             }),
-            // {
-            //   validator: (_, value, getFieldsValue) => {
-            //     if (value && value === getFieldsValue("password")) {
-            //       Promise.resolve();
-            //     } else {
-            //       // eslint-disable-next-line prefer-promise-reject-errors
-            //       Promise.reject("Two password does not match!");
-            //     }
-            //   },
-            // },
           ]}
         >
-          <Input.Password />
+          <Input.Password
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            placeholder="Confirm password"
+          />
         </Form.Item>
 
         <Form.Item
           wrapperCol={{
-            offset: 1,
+            offset: 0,
             span: 30,
           }}
         >
@@ -158,7 +161,7 @@ export default function SignUpForm() {
             block
             htmlType="submit"
           >
-            Submit
+            Sign Up
           </Button>
         </Form.Item>
       </Form>

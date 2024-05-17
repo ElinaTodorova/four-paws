@@ -1,15 +1,13 @@
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
-import SidebarComponent from "../../components/sidebarComponent/SidebarComponent";
 import SignUpForm from "../../components/signUpForm/SignUpForm";
+import Login from "../../components/signUpForm/login/Login";
+
+import "./SignUpPage.sass";
 
 export default function SignUpPage() {
   return (
-    <>
-      <Header className="mobile" />
-      <SidebarComponent />
+    <section className="page-section">
+      <Login />
       <SignUpForm />
-      <Footer classname="footer" />
-    </>
+    </section>
   );
 }

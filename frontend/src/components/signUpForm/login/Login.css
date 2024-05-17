@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.login-side {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .login-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/original.jpg");
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .login-side h2 {
+    color: white;
+  }
+} /*# sourceMappingURL=Login.css.map */

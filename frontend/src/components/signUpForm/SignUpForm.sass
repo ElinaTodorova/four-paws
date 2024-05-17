@@ -1,21 +1,21 @@
 @import "../../variables"
 
 .container_form
-    @include flexbox_centre()
-    margin-top: 2rem
+    @include flexbox_column()
     
     .form
-        width: 80vw
+        // width: 40vw
         height: 80svh
         padding: 0.5rem 1.5rem 1.5rem 2rem
         border-radius: 10px
         margin-bottom: 5rem 
 
         label
-            font-size: 1rem
+            font-size: 1.5rem
             color: black
         input
-            height: 2rem
+            height: 3rem
+            font-size: 1.3rem
         span
             &:focus,
             &:hover
@@ -30,8 +30,8 @@
     background-color: $secondary_color
 .title
     text-align: center
-    font-size: 2rem
-    color: black
+    font-size: 3rem
+    color: $primary_color
     
 
 .ant-input 
@@ -48,11 +48,13 @@
 .ant-checkbox-inner
     background-color: $secondary_color
 .ant-input-password
-    height: 2.3rem
+    height: 3.4rem
 
 
 @media screen and (min-width: 768px)
     .container_form
+        .nav_bar
+            display: none
         .form
             min-width: 45vw
             height: 60svh
@@ -65,6 +67,27 @@
 
 @media screen and (min-width: 1024px)
     .container_form
+        .nav_bar
+            display: none
         .form
             width: 45vw
             height: 60svh
+            
+            input
+                height: 3.5rem
+    
+        .button-start
+            border: 1px solid white
+            border-radius: 25px
+            width: 35rem
+            height: 3.5rem
+            font-size: 1.5rem
+            font-weight: bold
+        .ant-form-item-control-input-content
+            display: flex
+            align-items: center
+            justify-content: center
+            
+    .ant-input-password
+        height: 3.7rem
+            
