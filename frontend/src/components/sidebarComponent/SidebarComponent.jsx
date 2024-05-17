@@ -45,7 +45,9 @@ export default function SidebarComponent() {
             </Link>
           </MenuItem>
           <MenuItem className="item">
-            <FontAwesomeIcon icon={faUser} className="icon" /> Profil
+            <Link to={Paths.SignUp}>
+              <FontAwesomeIcon icon={faUser} className="icon" /> Profil
+            </Link>
           </MenuItem>
           <MenuItem className="item">
             <FontAwesomeIcon icon={faRecycle} className="icon" /> Second Hand

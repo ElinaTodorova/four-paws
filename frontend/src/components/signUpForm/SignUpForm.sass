@@ -1,0 +1,64 @@
+@import "../../variables"
+
+.container_form
+    @include flexbox_centre()
+    margin-top: 3rem
+
+    .form
+        width: 80vw
+        height: 80svh
+        padding: 2rem
+        // background-color: #8cf3ae
+        // background-image: url("/images/bck.jpg")
+        border-radius: 10px
+        margin-bottom: 5rem 
+
+        label
+            font-size: 1rem
+            color: black
+        input
+            height: 2.5rem
+.button-start
+    background-color: $primary_color
+    font-weight: bold
+    font-size: 1.5rem
+    @include flexbox_centre()
+    
+.ant-btn.css-dev-only-do-not-override-1r287do.ant-btn-primary.ant-btn-lg.ant-btn-block.button-start:hover
+    background-color: $secondary_color
+.title
+    text-align: center
+    font-size: 2rem
+    color: black
+    
+
+.ant-input 
+    &:focus,
+    &:hover 
+        border-color: $secondary_color  
+.ant-input-password
+    &:focus,    
+    &:hover 
+        border-color: $secondary_color  
+    
+.ant-checkbox-inner
+    background-color: $secondary_color
+.ant-input-password
+    height: 2.5rem
+@media screen and (min-width: 768px)
+    .container_form
+        .form
+            min-width: 45vw
+            height: 60svh
+            label
+                font-size: 1.5rem
+            input
+                height: 3.5rem
+    .ant-input-password
+        height: 3.5rem
+
+@media screen and (min-width: 1024px)
+    .container_form
+        .form
+            width: 45vw
+            height: 60svh
