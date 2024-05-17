@@ -1,0 +1,29 @@
+@import "../../../variables"
+.login-side 
+    display: none
+
+@media screen and (min-width: 768px)
+    .login-side 
+        // @include flexbox_column()
+        background-image: url("/images/original.jpg")
+        object-fit: cover
+
+        h2
+            color: white 
+            font-family: $paragraphes-font
+            font-size: 4rem
+        p
+            color: white
+            font-size: 1.6rem
+        .btn-signIn
+            background-color: none
+            border: 1px solid white
+            border-radius: 25px
+            width: 25rem
+            height: 3.5rem
+            font-size: 1.5rem
+            font-weight: bold
+            color: $primary_color
+    .ant-btn.css-dev-only-do-not-override-1r287do.ant-btn-default.btn-signIn:hover
+        border-color: $secondary_color
+        color: $secondary_color

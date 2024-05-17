@@ -36,13 +36,13 @@
   height: 3rem;
 }
 .content .button-start {
-  background-color: #32de84;
+  background-color: rgb(59, 173, 146);
   font-weight: bold;
   font-size: 1.5rem;
   height: 100%;
 }
 .content .button-start.ant-btn-primary:hover {
-  background: #50c878;
+  background: rgb(124, 200, 182);
 }
 
 @media screen and (width > 760px) {

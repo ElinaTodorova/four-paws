@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .nav_bar {
-  background-color: #32de84;
+  background-color: rgb(59, 173, 146);
   height: 4rem;
   width: 100%;
   display: flex;
@@ -41,8 +41,5 @@
   }
   .nav_bar .side_bar {
     display: block;
-  }
-  .svg_icon {
-    display: none;
   }
 } /*# sourceMappingURL=Header.css.map */

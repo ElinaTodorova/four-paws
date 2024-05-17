@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.container_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container_form .form {
+  height: 80svh;
+  padding: 0.5rem 1.5rem 1.5rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 5rem;
+}
+.container_form .form label {
+  font-size: 1.5rem;
+  color: black;
+}
+.container_form .form input {
+  height: 3rem;
+  font-size: 1.3rem;
+}
+.container_form .form span:focus,
+.container_form .form span:hover {
+  border-color: rgb(124, 200, 182);
+}
+
+.button-start {
+  background-color: rgb(59, 173, 146);
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-btn.css-dev-only-do-not-override-1r287do.ant-btn-primary.ant-btn-lg.ant-btn-block.button-start:hover {
+  background-color: rgb(124, 200, 182);
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(59, 173, 146);
+}
+
+.ant-input:focus,
+.ant-input:hover {
+  border-color: rgb(124, 200, 182);
+}
+
+.ant-input {
+  background-color: red;
+}
+
+.ant-input-password:focus,
+.ant-input-password:hover {
+  border-color: rgb(124, 200, 182);
+}
+
+.ant-checkbox-inner {
+  background-color: rgb(124, 200, 182);
+}
+
+.ant-input-password {
+  height: 3.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container_form .nav_bar {
+    display: none;
+  }
+  .container_form .form {
+    min-width: 45vw;
+    height: 60svh;
+  }
+  .container_form .form label {
+    font-size: 1.3rem;
+  }
+  .container_form .form input {
+    height: 2.2rem;
+  }
+  .ant-input-password {
+    height: 2.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container_form .nav_bar {
+    display: none;
+  }
+  .container_form .form {
+    width: 45vw;
+    height: 60svh;
+  }
+} /*# sourceMappingURL=SignUpForm.css.map */

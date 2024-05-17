@@ -12,6 +12,23 @@
   margin-bottom: 5rem;
 }
 
+.radio-group {
+  margin-top: 2rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.radio-btn {
+  height: 100%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     display: flex;
@@ -35,5 +52,19 @@
   }
   .infos-categories {
     margin: 0 6rem;
+  }
+  .radio-group {
+    margin-top: 2rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .radio-btn {
+    height: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 } /*# sourceMappingURL=Category.css.map */
