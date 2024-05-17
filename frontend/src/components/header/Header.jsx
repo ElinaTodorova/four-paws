@@ -16,12 +16,14 @@ export default function Header() {
           style={{ color: "#ffffff" }}
         />
       </Link>
-      <FontAwesomeIcon
-        className="svg_icon"
-        data-testid="svg-icon"
-        icon={faUser}
-        style={{ color: "#ffffff" }}
-      />
+      <Link to={Paths.SignUp}>
+        <FontAwesomeIcon
+          className="svg_icon"
+          data-testid="svg-icon"
+          icon={faUser}
+          style={{ color: "#ffffff" }}
+        />
+      </Link>
       <h2>Four Paws</h2>
       {/* <SidebarComponent /> */}
     </nav>

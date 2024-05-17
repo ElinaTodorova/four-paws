@@ -2,9 +2,9 @@ const Paths = {
   Home: "/",
   Welcome: "/welcome",
   Categories: "/categories/:animal",
+  SignUp: "/signUp",
   // CreateGame : "/games/create",
   // Login : "/login",
-  // Register: "/register",
   // Logout : "/logout",
   // Details : "/games/:id",
   // EditGame : "/games/:id/edit"

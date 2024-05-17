@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.7",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "antd": "^5.16.0",
