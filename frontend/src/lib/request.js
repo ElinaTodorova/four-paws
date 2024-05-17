@@ -1,5 +1,18 @@
-const request = async (method, url) => {
-  const response = await fetch(url, { method });
+const buildOptions = (data) => {
+  const options = {};
+
+  if (data) {
+    options.body = JSON.stringify(data);
+    // options.headers = {
+    //   "content-type": "application/json",
+    // };
+  }
+
+  return options;
+};
+
+const request = async (method, url, data) => {
+  const response = await fetch(url, { ...buildOptions(data), method });
 
   if (response.status === 204) {
     return {};
