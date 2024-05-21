@@ -39,22 +39,18 @@ export default function SidebarComponent() {
             },
           }}
         >
-          <MenuItem className="item">
-            <Link to={Paths.Welcome}>
-              <FontAwesomeIcon icon={faPaw} className="icon" /> Home
-            </Link>
+          <MenuItem className="item" component={<Link to={Paths.Home} />}>
+            <FontAwesomeIcon icon={faPaw} className="icon" /> Home
           </MenuItem>
-          <MenuItem className="item">
-            <Link to={Paths.SignUp}>
-              <FontAwesomeIcon icon={faUser} className="icon" /> Profil
-            </Link>
+          <MenuItem className="item" component={<Link to={Paths.SignUp} />}>
+            <FontAwesomeIcon icon={faUser} className="icon" /> Profil
           </MenuItem>
           <MenuItem className="item">
             <FontAwesomeIcon icon={faRecycle} className="icon" /> Second Hand
           </MenuItem>
-          <MenuItem className="item">
+          <MenuItem className="item" component={<Link to={Paths.Location} />}>
             <FontAwesomeIcon icon={faLocationDot} className="icon" />
-            Our shop
+            <p>Our shop</p>
           </MenuItem>
         </Menu>
       </Sidebar>

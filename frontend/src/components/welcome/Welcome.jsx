@@ -8,7 +8,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   const onClickNavigate = () => {
-    navigate(Paths.Welcome);
+    navigate(Paths.Home);
   };
 
   return (
