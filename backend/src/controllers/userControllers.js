@@ -61,7 +61,7 @@ const read = async (req, res, next) => {
     if (match) {
       delete user.hashed_password;
       const token = await jwt.sign({ user }, process.env.APP_SECRET, {
-        expiresIn: 120,
+        expiresIn: "1h",
       });
       res
         .cookie("access_token", token, {

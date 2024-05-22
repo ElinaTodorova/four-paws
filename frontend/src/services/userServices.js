@@ -1,11 +1,15 @@
 import * as request from "../lib/request";
 
-const baseUrl = `${import.meta.env.VITE_BACKEND_URL}/api/user`;
+const baseUrl = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
-const register = async (userInfo) => {
+export const register = async (userInfo) => {
   const result = await request.post(`${baseUrl}/signup`, userInfo);
 
   return result;
 };
 
-export default register;
+export const login = async (userData) => {
+  const result = await request.post(`${baseUrl}/login`, userData);
+
+  return result;
+};

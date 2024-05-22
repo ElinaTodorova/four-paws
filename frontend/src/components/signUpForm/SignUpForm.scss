@@ -1,0 +1,52 @@
+@import "../../variablesSCSS.scss";
+
+.container_form {
+  @include flexbox_column;
+  @include medium-screen {
+    .nav_bar {
+      display: none;
+    }
+  }
+
+  .form {
+    @include form;
+    @include flexbox_column;
+    input {
+      @include inputs_form;
+    }
+    .ant-form-item {
+      width: 100%;
+    }
+    .title {
+      @include title;
+    }
+    span {
+      &:focus,
+      &:hover {
+        border-color: $secondary_color;
+      }
+    }
+  }
+  .ant-btn.css-dev-only-do-not-override-1r287do.ant-btn-primary.ant-btn-lg.ant-btn-block.button-start:hover {
+    background-color: $secondary_color;
+  }
+  .button-start {
+    background-color: $primary_color;
+    font-weight: bold;
+    font-size: 1.5rem;
+    @include flexbox_centre();
+    @include large-screen {
+      border: 1px solid white;
+      border-radius: 25px;
+      width: 35rem;
+      height: 3.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+  // .ant-form-item-control-input-content {
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  // }
+}
