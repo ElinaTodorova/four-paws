@@ -17,6 +17,15 @@ class UserManager extends AbstractManager {
     // Return the ID of the newly inserted item
     return result.insertId;
   }
+
+  async read(email) {
+    const [result] = await this.database.query(
+      `select * from ${this.table} where email = '${email}'`,
+      [email]
+    );
+
+    return result[0];
+  }
 }
 
 module.exports = UserManager;
