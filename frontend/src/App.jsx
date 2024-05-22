@@ -7,6 +7,7 @@ import HomePage from "./pages/homePage/HomePage";
 import CategoryPage from "./pages/categoryPage/CategoryPage";
 import SignUpPage from "./pages/signUpPage/SignUpPage";
 import LocationPage from "./pages/locationPage/LocationPage";
+import LoginPage from "./pages/logInPage/LoginPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Route path={Paths.Categories} element={<CategoryPage />} />
       <Route path={Paths.SignUp} element={<SignUpPage />} />
       <Route path={Paths.Location} element={<LocationPage />} />
+      <Route path={Paths.Login} element={<LoginPage />} />
     </Routes>
   );
 }

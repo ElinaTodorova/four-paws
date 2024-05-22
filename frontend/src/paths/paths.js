@@ -4,6 +4,7 @@ const Paths = {
   Categories: "/categories/:animal",
   SignUp: "/signUp",
   Location: "/our-shops",
+  Login: "/login",
   // CreateGame : "/games/create",
   // Login : "/login",
   // Logout : "/logout",
