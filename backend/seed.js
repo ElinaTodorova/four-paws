@@ -33,38 +33,11 @@ const seed = async () => {
       )
     );
 
-    await database.query("delete from subcategory_image");
-    queries.push(
-      database.query(
-        "INSERT INTO subcategory_image(image_url) VALUES ('images/croquettes.png'), ('images/treatsDog.png'), ('images/cansDog'), ('images/dogAcc.png'), ('images/shampooDog.jpg'), ('images/dentalSticksDog.jpg')"
-      )
-    );
-
-    await database.query("delete from subcategory");
-    queries.push(
-      database.query(
-        "INSERT INTO subcategory(subcategory_name, category_id, image_id) VALUES ('Dry Food', 1, 1), ('Treats&Chews', 1, 2), ('Cans/Pouches/Trays', 1, 3), ('Oral care',2, 6)"
-      )
-    );
-
     await database.query("delete from role");
     queries.push(
       database.query("insert into role(role) values ('admin'), ('guest');")
     );
 
-    await database.query("delete from brand");
-    queries.push(
-      database.query(
-        "insert into brand(name_brand,image_brand ) values ('Nutrivia Nature Plus', '/images/logo-nutrivia.jpg');"
-      )
-    );
-
-    await database.query("delete from product");
-    queries.push(
-      database.query(
-        "insert into product(name_product, product_image, description_product, price, unity,animal_id, category_product_id, isSecondHand, brand_id) VALUES ('Croquettes Naturelles au Canard Frais pour Chien de Toutes Races', '/images/Nutrivia - Nature - Canard - Chien.jpg' ,'Aliment complet.Croquettes naturelles de très haute qualité sans céréales pour le bien être au naturel des chiens adultes de toutes races, à partir de 12 mois.Aliment complet au canard frais, formulé pour une digestion facile et une bonne fonction hépatique, enrichi avec des probiotiques et des antioxydants pour une meilleure immunité.Nutrivia Nature Plus est formulé:Sans additifs.Sans conservateurs.Sans ogm', '55.60', 'Euros', 1, 1, False, 1), ('Croquettes Naturelles au Poulet Frais pour Chien de Toutes Races', '/images/nutrivia-poulet-dog', 'Aliment complet.Croquettes naturelles de très haute qualité sans céréales pour le bien être au naturel des chiens adultes de toutes races, à partir de 12 mois.Aliment complet au poulet frais, formulé pour une digestion facile et une bonne fonction hépatique, enrichi avec des probiotiques et des antioxydants pour une meilleure immunité.', '56.70', '$', 1,false, 1);"
-      )
-    );
     /* ************************************************************************* */
 
     // Wait for all the insertion queries to complete

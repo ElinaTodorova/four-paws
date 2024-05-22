@@ -1,5 +1,9 @@
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 const nodemailer = require("nodemailer");
 const { config } = require("../mailer/config");
+
 // Import access to database tables
 const tables = require("../tables");
 // The A of BREAD - Add (Create) operation
@@ -39,6 +43,46 @@ const signUp = async (req, res, next) => {
   }
 };
 
+// The R of BREAD - Read operation
+const read = async (req, res, next) => {
+  try {
+    // Fetch a specific item from the database based on the provided ID
+    const { email, password } = req.body;
+    const user = await tables.user.read(email);
+
+    // If the item is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the item in JSON format
+    if (user === null) {
+      res.sendStatus(422);
+    }
+
+    const match = await bcrypt.compare(password, user.hashed_password);
+
+    if (match) {
+      delete user.hashed_password;
+      const token = await jwt.sign({ user }, process.env.APP_SECRET, {
+        expiresIn: 120,
+      });
+      res
+        .cookie("access_token", token, {
+          httpOnly: true,
+          sameSite: "strict",
+          secure: process.env.NODE_ENV === "production",
+          // maxAge: 3600000,
+        })
+        .json({
+          user,
+        });
+    } else {
+      res.sendStatus(422);
+    }
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
+
 module.exports = {
   signUp,
+  read,
 };

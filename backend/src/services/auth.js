@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const hashPassword = async (req, res, next) => {
   try {
@@ -16,6 +17,19 @@ const hashPassword = async (req, res, next) => {
   }
 };
 
+const verifyToken = async (req, res, next) => {
+  const token = req.cookies.access_token;
+  try {
+    const user = jwt.verify(token, process.env.APP_SECRET);
+    req.user = user;
+    return next();
+  } catch (err) {
+    res.clearCookie("access_token");
+    return res.redirect("/");
+  }
+};
+
 module.exports = {
   hashPassword,
+  verifyToken,
 };
