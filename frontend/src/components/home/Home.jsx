@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import * as services from "../../services/animalsService";
-
 import AnimalsCategory from "./animalsCategory/AnimalsCategory";
 import Carrousel from "./carrousel/Carrousel";
 import AboutUs from "./aboutUs/AboutUs";
