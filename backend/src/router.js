@@ -14,7 +14,7 @@ const categoriesControllers = require("./controllers/categoriesControllers");
 const productControllers = require("./controllers/productControllers");
 const userControllers = require("./controllers/userControllers");
 
-const { hashPassword } = require("./services/auth");
+const { hashPassword, verifyToken } = require("./services/auth");
 // Route to get a list of items
 router.get("/animals", animalControllers.browse);
 
@@ -31,5 +31,6 @@ router.post("/signup", hashPassword, userControllers.signUp);
 router.post("/login", userControllers.login);
 
 /* ************************************************************************* */
-
+router.use(verifyToken);
+router.get("/logout", userControllers.logout);
 module.exports = router;

@@ -1,12 +1,13 @@
 const buildOptions = (data) => {
   const options = {};
 
+  options.headers = {
+    "content-type": "application/json",
+  };
+  options.credentials = "include";
+
   if (data) {
     options.body = JSON.stringify(data);
-    options.headers = {
-      "content-type": "application/json",
-    };
-    options.credentials = "include";
   }
 
   return options;

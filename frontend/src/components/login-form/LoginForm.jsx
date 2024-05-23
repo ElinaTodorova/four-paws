@@ -18,7 +18,7 @@ export default function LoginForm() {
     [LoginFormKeys.Password]: "",
   });
 
-  const loginFunc = useLogin();
+  const { loginFunc } = useLogin();
 
   const navigate = useNavigate();
 
