@@ -25,7 +25,7 @@ const verifyToken = async (req, res, next) => {
     return next();
   } catch (err) {
     res.clearCookie("access_token");
-    return res.redirect("/");
+    return res.redirect("/login");
   }
 };
 

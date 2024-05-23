@@ -44,7 +44,7 @@ const signUp = async (req, res, next) => {
 };
 
 // The R of BREAD - Read operation
-const read = async (req, res, next) => {
+const login = async (req, res, next) => {
   try {
     // Fetch a specific item from the database based on the provided ID
     const { email, password } = req.body;
@@ -84,5 +84,5 @@ const read = async (req, res, next) => {
 
 module.exports = {
   signUp,
-  read,
+  login,
 };

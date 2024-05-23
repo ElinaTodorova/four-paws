@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faList,
@@ -7,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./Footer.sass";
+import Paths from "../../paths/paths";
 
 export default function Footer() {
   return (
@@ -29,12 +31,14 @@ export default function Footer() {
         style={{ color: "#ffffff" }}
         data-testid="svg-icon"
       />
-      <FontAwesomeIcon
-        className="icon"
-        icon={faLocationDot}
-        style={{ color: "#ffffff" }}
-        data-testid="svg-icon"
-      />
+      <Link to={Paths.Location}>
+        <FontAwesomeIcon
+          className="icon"
+          icon={faLocationDot}
+          style={{ color: "#ffffff" }}
+          data-testid="svg-icon"
+        />
+      </Link>
     </footer>
   );
 }
