@@ -1,6 +1,7 @@
 import Location from "../../components/location/Location";
 import Header from "../../components/header/Header";
 import SidebarComponent from "../../components/sidebarComponent/SidebarComponent";
+import Footer from "../../components/footer/Footer";
 
 export default function LocationPage() {
   return (
@@ -8,6 +9,7 @@ export default function LocationPage() {
       <Header className="mobile" />
       <SidebarComponent />
       <Location />
+      <Footer />
     </>
   );
 }

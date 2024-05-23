@@ -17,6 +17,9 @@
     .ant-form-item {
       width: 100%;
     }
+    .ant-row {
+      @include flexbox_centre;
+    }
     .title {
       @include title;
     }
@@ -44,9 +47,10 @@
       font-weight: bold;
     }
   }
-  // .ant-form-item-control-input-content {
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  // }
+  .ant-form-item-control-input-content {
+    // background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

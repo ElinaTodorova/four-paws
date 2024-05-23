@@ -28,7 +28,7 @@ router.get("/catalog/:animal/:id", productControllers.read);
 // Route to add a new item
 router.post("/items", itemControllers.add);
 router.post("/signup", hashPassword, userControllers.signUp);
-router.post("/login", userControllers.read);
+router.post("/login", userControllers.login);
 
 /* ************************************************************************* */
 

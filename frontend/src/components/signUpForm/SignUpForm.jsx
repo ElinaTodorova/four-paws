@@ -3,7 +3,7 @@ import { Button, Form, Input } from "antd";
 import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 
 import Header from "../header/Header";
-import { register } from "../../services/userServices";
+import { register } from "../../services/authServices";
 
 import "./SignUpForm.scss";
 

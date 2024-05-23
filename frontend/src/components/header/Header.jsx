@@ -8,7 +8,7 @@ import Paths from "../../paths/paths";
 export default function Header() {
   return (
     <nav className="nav_bar" role="navigation">
-      <Link to={Paths.Welcome}>
+      <Link to={Paths.Home}>
         <FontAwesomeIcon
           className="svg_icon"
           data-testid="svg-icon"

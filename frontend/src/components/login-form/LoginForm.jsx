@@ -5,7 +5,7 @@ import { Button, Form, Input } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
 
 import "../signUpForm/SignUpForm.scss";
-import { login } from "../../services/userServices";
+import useLogin from "../../hook/useLogin";
 
 const LoginFormKeys = {
   Email: "email",
@@ -18,6 +18,8 @@ export default function LoginForm() {
     [LoginFormKeys.Password]: "",
   });
 
+  const loginFunc = useLogin();
+
   const navigate = useNavigate();
 
   const onValuesChange = (changedValues, allValues) => {
@@ -25,11 +27,9 @@ export default function LoginForm() {
   };
 
   const onSubmit = async () => {
-    const user = await login(userData);
+    await loginFunc(userData);
 
-    if (Object.keys(user).length !== 0) {
-      navigate("/");
-    }
+    navigate("/");
   };
 
   return (
