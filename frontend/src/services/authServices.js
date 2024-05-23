@@ -13,3 +13,5 @@ export const login = async (userData) => {
 
   return result;
 };
+
+export const logout = () => request.get(`${baseUrl}/logout`);

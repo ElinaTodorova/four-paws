@@ -12,5 +12,5 @@ export default function useLogin() {
     dispatch({ type: "LOGIN", payload: { ...userObj.user } });
   };
 
-  return loginFunc;
+  return { loginFunc };
 }
