@@ -4,6 +4,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
+  useState,
 } from "react";
 import PropTypes from "prop-types";
 
@@ -29,8 +30,10 @@ export function AuthProvider({ children }) {
     user: null,
   });
 
+  const [isFirstLogin, setIsFirstLogin] = useState(false);
+
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    const user = JSON.parse(localStorage.getItem("user"));
 
     if (user) {
       dispatch({ type: "LOGIN", payload: user });
@@ -40,8 +43,8 @@ export function AuthProvider({ children }) {
   return (
     <AuthContext.Provider
       value={useMemo(() => {
-        return { ...state, dispatch };
-      }, [state, dispatch])}
+        return { ...state, dispatch, isFirstLogin, setIsFirstLogin };
+      }, [state, dispatch, isFirstLogin, setIsFirstLogin])}
     >
       {children}
     </AuthContext.Provider>
