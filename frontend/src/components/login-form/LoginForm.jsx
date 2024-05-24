@@ -6,6 +6,7 @@ import { LockOutlined, MailOutlined } from "@ant-design/icons";
 
 import "../signUpForm/SignUpForm.scss";
 import useLogin from "../../hook/useLogin";
+import { useAuthContext } from "../context/AuthContext";
 
 const LoginFormKeys = {
   Email: "email",
@@ -18,6 +19,8 @@ export default function LoginForm() {
     [LoginFormKeys.Password]: "",
   });
 
+  const { setIsFirstLogin } = useAuthContext();
+
   const { loginFunc } = useLogin();
 
   const navigate = useNavigate();
@@ -29,6 +32,7 @@ export default function LoginForm() {
   const onSubmit = async () => {
     await loginFunc(userData);
 
+    setIsFirstLogin(true);
     navigate("/");
   };
 
